@@ -473,7 +473,7 @@
 
 
 <div class="description">
-    创建element
+    创建元素
 </div>
 
 
@@ -531,7 +531,7 @@
 
             
 
-            <td class="description last">data = tagName || { ...element }</td>
+            <td class="description last">data = tagName || { ...元素属性 };<br>                                        扩展元素属性：{ child: 子元素, text: 文本节点 };<br>                                        child = data 或 [data1, ..., dataN]; <br>                                        文本节点的属性名为 'text' 或 'text' + 数字 { text: '内容', text0: '内容', text1: '内容', ... }; <br></td>
         </tr>
 
     
@@ -572,7 +572,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dom_createElement.js.html">dom/createElement.js</a>, <a href="dom_createElement.js.html#line32">line 32</a>
+        <a href="dom_createElement.js.html">dom/createElement.js</a>, <a href="dom_createElement.js.html#line51">line 51</a>
     </li></ul></dd>
     
 
@@ -599,7 +599,7 @@
 
         
 <div class="param-desc">
-    - 返回element
+    - 返回元素
 </div>
 
 
@@ -623,7 +623,7 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>import { createElement } from 'digi'let el = createElement()console.log(el.outerHTML)// => '&lt;div>&lt;/div>' el = createElement('a')console.log(el.outerHTML)// => '&lt;a>&lt;/a>' el = createElement({ tagName: 'a' })console.log(el.outerHTML)// => '&lt;a>&lt;/a>' el = createElement({ text: '123', text2: 'aa' })console.log(el.outerHTML)// => '&lt;div>123aa&lt;/div>'</code></pre>
+    <pre class="prettyprint"><code>import { createElement } from 'digi'let el = createElement()console.log(el.outerHTML)// => '&lt;div>&lt;/div>'el = createElement('a')console.log(el.outerHTML)// => '&lt;a>&lt;/a>'el = createElement({ tagName: 'a' })console.log(el.outerHTML)// => '&lt;a>&lt;/a>'// 子元素1el = createElement({ child: 'a' })console.log(el.outerHTML)// => '&lt;div>&lt;a>&lt;/a>&lt;/div>'// 子元素2el = createElement({ child: { tagName: 'a' } })console.log(el.outerHTML)// => '&lt;div>&lt;a>&lt;/a>&lt;/div>'// 子元素3el = createElement({ child: [{ tagName: 'a' }, 'p'] })console.log(el.outerHTML)// => '&lt;div>&lt;a>&lt;/a>&lt;p>&lt;/p>&lt;/div>'// 文本节点el = createElement({ text: '123', text2: 'aa' })console.log(el.outerHTML)// => '&lt;div>123aa&lt;/div>'</code></pre>
 
 
 
@@ -861,7 +861,7 @@
 
             
 
-            <td class="description last">data = tagName || { ...element } || [..., tagName, ..., { ...element }, ...]</td>
+            <td class="description last">data = tagName || { ...element } || [..., tagName, ..., { ...element }, ...];<br>                                    扩展元素属性：{ child: 子元素, text: 文本节点 }，<br>                                    child = [data1, ..., dataN] 或 data <br>                                    文本节点的属性名为 'text' 或 'text' + 数字 { text: '内容', text0: '内容', text1: '内容', ... } <br>                                    参数详情查看<a href="global.html#createElement">createElement</a></td>
         </tr>
 
     
@@ -928,7 +928,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.prod.js.html">main.prod.js</a>, <a href="main.prod.js.html#line28">line 28</a>
+        <a href="main.prod.js.html">main.prod.js</a>, <a href="main.prod.js.html#line32">line 32</a>
     </li></ul></dd>
     
 

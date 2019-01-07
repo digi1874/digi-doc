@@ -1,6 +1,7 @@
 - [digi](https://github.com/digi1874/digi)
 - [digi 文档](https://digi1874.github.io/digi-doc/1.0.0-Beta/index.html)
 - [demo](https://github.com/lin09/digi-demo)
+- [refs](https://github.com/digi1874/digi-refs)
 
 
 ```

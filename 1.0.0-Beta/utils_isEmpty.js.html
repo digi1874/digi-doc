@@ -54,7 +54,7 @@ const emptyObject = JSON.stringify({})
  * // => true
  */
 export const isEmpty = value => {
-  if (isArray(value) &amp;&amp; isArray.length > 0) {
+  if (isArray(value) &amp;&amp; value.length > 0) {
     return false
   } else if (isObject(value) &amp;&amp; emptyObject !== JSON.stringify(value)) {
     return false

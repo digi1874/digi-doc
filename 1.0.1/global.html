@@ -19,7 +19,7 @@
 <div class="flex">
     <nav>
         <div class="nav-position">
-            <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#cloneDeep">cloneDeep</a></li><li><a href="global.html#createData">createData</a></li><li><a href="global.html#createElement">createElement</a></li><li><a href="global.html#createTextNode">createTextNode</a></li><li><a href="global.html#digi">digi</a></li><li><a href="global.html#forEach">forEach</a></li><li><a href="global.html#isArray">isArray</a></li><li><a href="global.html#isEmpty">isEmpty</a></li><li><a href="global.html#isFunction">isFunction</a></li><li><a href="global.html#isNull">isNull</a></li><li><a href="global.html#isNumber">isNumber</a></li><li><a href="global.html#isObject">isObject</a></li><li><a href="global.html#isString">isString</a></li><li><a href="global.html#isTofObject">isTofObject</a></li><li><a href="global.html#isUndefined">isUndefined</a></li><li><a href="global.html#pathJoin">pathJoin</a></li><li><a href="global.html#pathSplit">pathSplit</a></li><li><a href="global.html#pick">pick</a></li><li><a href="global.html#plugins">plugins</a></li><li><a href="global.html#set">set</a></li></ul>
+            <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#cloneDeep">cloneDeep</a></li><li><a href="global.html#createData">createData</a></li><li><a href="global.html#createElement">createElement</a></li><li><a href="global.html#createTextNode">createTextNode</a></li><li><a href="global.html#digi">digi</a></li><li><a href="global.html#forEach">forEach</a></li><li><a href="global.html#getFilter">getFilter</a></li><li><a href="global.html#isArray">isArray</a></li><li><a href="global.html#isEmpty">isEmpty</a></li><li><a href="global.html#isFunction">isFunction</a></li><li><a href="global.html#isNull">isNull</a></li><li><a href="global.html#isNumber">isNumber</a></li><li><a href="global.html#isObject">isObject</a></li><li><a href="global.html#isString">isString</a></li><li><a href="global.html#isTofObject">isTofObject</a></li><li><a href="global.html#isUndefined">isUndefined</a></li><li><a href="global.html#pathJoin">pathJoin</a></li><li><a href="global.html#pathSplit">pathSplit</a></li><li><a href="global.html#pick">pick</a></li><li><a href="global.html#plugins">plugins</a></li><li><a href="global.html#set">set</a></li></ul>
         </div>
     </nav>
 
@@ -101,6 +101,72 @@
 
     
 
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="getFilter"><span class="type-signature">(constant) </span>getFilter<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    获取过滤器
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="data_filters.js.html">data/filters.js</a>, <a href="data_filters.js.html#line36">line 36</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
     
 
     
@@ -531,7 +597,7 @@
 
             
 
-            <td class="description last">data = tagName || { ...元素属性 };<br>                                        扩展元素属性：{ child: 子元素, text: 文本节点 };<br>                                        child = data 或 [data1, ..., dataN]; <br>                                        文本节点的属性名为 'text' 或 'text' + 数字 { text: '内容', text0: '内容', text1: '内容', ... }; <br></td>
+            <td class="description last">data = tagName || { ...元素属性 };<br>                                        扩展元素属性：{ child: 子元素, text: 文本节点 };<br>                                        child = data 或 [data1, ..., dataN]; <br>                                        子元素的属性名为 'child' 或 'child' + 数字 { child: 子元素, child0: 子元素, child1: 子元素, ... }; <br>                                        文本节点的属性名为 'text' 或 'text' + 数字 { text: '内容', text0: '内容', text1: '内容', ... }; <br></td>
         </tr>
 
     
@@ -572,7 +638,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dom_createElement.js.html">dom/createElement.js</a>, <a href="dom_createElement.js.html#line51">line 51</a>
+        <a href="dom_createElement.js.html">dom/createElement.js</a>, <a href="dom_createElement.js.html#line57">line 57</a>
     </li></ul></dd>
     
 
@@ -861,7 +927,7 @@
 
             
 
-            <td class="description last">data = tagName || { ...element } || [..., tagName, ..., { ...element }, ...];<br>                                    扩展元素属性：{ child: 子元素, text: 文本节点 }，<br>                                    child = [data1, ..., dataN] 或 data <br>                                    文本节点的属性名为 'text' 或 'text' + 数字 { text: '内容', text0: '内容', text1: '内容', ... } <br>                                    参数详情查看<a href="global.html#createElement">createElement</a></td>
+            <td class="description last">data = tagName || { ...element } || [..., tagName, ..., { ...element }, ...];<br>                                    扩展元素属性：{ child: 子元素, text: 文本节点 }，<br>                                    child = [data1, ..., dataN] 或 data <br>                                    子元素的属性名为 'child' 或 'child' + 数字 { child: 子元素, child0: 子元素, child1: 子元素, ... }; <br>                                    文本节点的属性名为 'text' 或 'text' + 数字 { text: '内容', text0: '内容', text1: '内容', ... } <br>                                    参数详情查看<a href="global.html#createElement">createElement</a></td>
         </tr>
 
     
@@ -928,7 +994,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.prod.js.html">main.prod.js</a>, <a href="main.prod.js.html#line32">line 32</a>
+        <a href="main.prod.js.html">main.prod.js</a>, <a href="main.prod.js.html#line33">line 33</a>
     </li></ul></dd>
     
 
@@ -3148,7 +3214,7 @@
 
             
 
-            <td class="description last">值 = [plugin1, ..., pluginN]; <br>                         plugin = { propertiy: '元素属性名', handler: (元素, 元素属性值) => {} };<br>                         或 plugin = [{ propertiy: '元素属性名', handler: (元素, 元素属性值) => {} }, options]; options = {...}<br>                         handler在创建元素时抓捕到对应属性被触发, 并plugin.options = Object.assign(plugin.options, options)</td>
+            <td class="description last">值 = [plugin1, ..., pluginN]; <br>                         plugin = { property: '元素属性名', handler: (元素, 元素属性值) => {} };<br>                         或 plugin = [{ property: '元素属性名', handler: (元素, 元素属性值) => {} }, options]; options = {...}<br>                         handler在创建元素时抓捕到对应属性被触发, 并plugin.options = Object.assign(plugin.options, options)</td>
         </tr>
 
     
@@ -3218,7 +3284,7 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>import digi, { plugins } from 'digi'import refs, { allotId } from 'digi-refs'console.log(refs)// {propertiy: "ref", handler: ƒ, allotId: ƒ}// 添加插件: plugins([refs]) 或 digi.plugins([refs])plugins([refs])// 分配标记idconst textRefId = allotId()// 添加元素digi({ ref: textRefId, text: 'hello world' })console.log(refs[textRefId].outerHTML)// => &lt;div>hello world&lt;/div></code></pre>
+    <pre class="prettyprint"><code>import digi, { plugins } from 'digi'import refs, { allotId } from 'digi-refs'console.log(refs)// {property: "ref", handler: ƒ, allotId: ƒ}// 添加插件: plugins([refs]) 或 digi.plugins([refs])plugins([refs])// 分配标记idconst textRefId = allotId()// 添加元素digi({ ref: textRefId, text: 'hello world' })console.log(refs[textRefId].outerHTML)// => &lt;div>hello world&lt;/div></code></pre>
 
 
 

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>digi: Source: data/filters.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+    <link type="text/css" rel="stylesheet" href="styles/index.css">
+</head>
+
+<body>
+
+<div class="flex">
+    <nav>
+        <div class="nav-position">
+            <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#cloneDeep">cloneDeep</a></li><li><a href="global.html#createData">createData</a></li><li><a href="global.html#createElement">createElement</a></li><li><a href="global.html#createTextNode">createTextNode</a></li><li><a href="global.html#digi">digi</a></li><li><a href="global.html#forEach">forEach</a></li><li><a href="global.html#getFilter">getFilter</a></li><li><a href="global.html#isArray">isArray</a></li><li><a href="global.html#isEmpty">isEmpty</a></li><li><a href="global.html#isFunction">isFunction</a></li><li><a href="global.html#isNull">isNull</a></li><li><a href="global.html#isNumber">isNumber</a></li><li><a href="global.html#isObject">isObject</a></li><li><a href="global.html#isString">isString</a></li><li><a href="global.html#isTofObject">isTofObject</a></li><li><a href="global.html#isUndefined">isUndefined</a></li><li><a href="global.html#pathJoin">pathJoin</a></li><li><a href="global.html#pathSplit">pathSplit</a></li><li><a href="global.html#pick">pick</a></li><li><a href="global.html#plugins">plugins</a></li><li><a href="global.html#set">set</a></li></ul>
+        </div>
+    </nav>
+
+    <div id="main">
+
+        <h1 class="page-title">Source: data/filters.js</h1>
+
+        
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { isArray, forEach } from '../utils'
+/**
+ * 存储过滤器数据
+ * filters[addFilter.id] = [filter1, ..., filterN]; filter = [handleFun, arg1, ..., arg2]
+ * @private
+ */
+const filters = {}
+
+/**
+ * 添加过滤器数据
+ * @private
+ * @function
+ * @param {Array} args - args = [filter1, ..., filterN]; filter = [handleFun, arg1, ..., arg2] || handleFun
+ * @returns {Number}   - 返回id值
+ */
+export const addFilter = args => {
+  const item = []
+  forEach(args, filter => isArray(filter) ? item.push(filter) : item.push([filter]))
+
+  filters[++ addFilter.id] = item
+
+  return addFilter.id
+}
+
+/**
+ * 累计id
+ * @property {Number} addFilter.id 最后一个id值
+ */
+Object.defineProperty(addFilter, 'id', { value: 0, writable: true })
+
+/**
+ * 获取过滤器
+ * @param {Number} id - {@link addFilter}返回的id
+ * @returns {Array}   - 返回[[filter, arg1, ..., argN], ... ]
+ */
+export const getFilter = id => filters[id]
+
+/**
+ * 删除过滤器
+ * @private
+ * @function
+ * @param {Number} id - {@link addFilter}返回的id
+ * @returns {Array}   - 成功返回[[filter, arg1, ..., argN], ... ]，否则返回undefined
+ */
+export const removeFilter = id => {
+  const filter = filters[id]
+  delete filters[id]
+  return filter
+}
+
+/**
+ * 恢复过滤器
+ * @private
+ * @function
+ * @param {Number} id     - {@link removeFilter}删除过滤器的id
+ * @param {Array}  filter - {@link removeFilter}删除过滤器返回的数据
+ */
+export const restoreFilter = (id, filter) => filters[id] = filter
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    </div>
+</div>
+
+<footer>
+    <a href="https://github.com/digi1874/digi" target="_blank">
+        <svg height="32" width="32" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+    </a>
+    <p>Copyright © 2018</p>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -19,7 +19,7 @@
 <div class="flex">
     <nav>
         <div class="nav-position">
-            <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#cloneDeep">cloneDeep</a></li><li><a href="global.html#createData">createData</a></li><li><a href="global.html#createElement">createElement</a></li><li><a href="global.html#createTextNode">createTextNode</a></li><li><a href="global.html#digi">digi</a></li><li><a href="global.html#forEach">forEach</a></li><li><a href="global.html#isArray">isArray</a></li><li><a href="global.html#isEmpty">isEmpty</a></li><li><a href="global.html#isFunction">isFunction</a></li><li><a href="global.html#isNull">isNull</a></li><li><a href="global.html#isNumber">isNumber</a></li><li><a href="global.html#isObject">isObject</a></li><li><a href="global.html#isString">isString</a></li><li><a href="global.html#isTofObject">isTofObject</a></li><li><a href="global.html#isUndefined">isUndefined</a></li><li><a href="global.html#pathJoin">pathJoin</a></li><li><a href="global.html#pathSplit">pathSplit</a></li><li><a href="global.html#pick">pick</a></li><li><a href="global.html#plugins">plugins</a></li><li><a href="global.html#set">set</a></li></ul>
+            <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#cloneDeep">cloneDeep</a></li><li><a href="global.html#createData">createData</a></li><li><a href="global.html#createElement">createElement</a></li><li><a href="global.html#createTextNode">createTextNode</a></li><li><a href="global.html#digi">digi</a></li><li><a href="global.html#forEach">forEach</a></li><li><a href="global.html#getFilter">getFilter</a></li><li><a href="global.html#isArray">isArray</a></li><li><a href="global.html#isEmpty">isEmpty</a></li><li><a href="global.html#isFunction">isFunction</a></li><li><a href="global.html#isNull">isNull</a></li><li><a href="global.html#isNumber">isNumber</a></li><li><a href="global.html#isObject">isObject</a></li><li><a href="global.html#isString">isString</a></li><li><a href="global.html#isTofObject">isTofObject</a></li><li><a href="global.html#isUndefined">isUndefined</a></li><li><a href="global.html#pathJoin">pathJoin</a></li><li><a href="global.html#pathSplit">pathSplit</a></li><li><a href="global.html#pick">pick</a></li><li><a href="global.html#plugins">plugins</a></li><li><a href="global.html#set">set</a></li></ul>
         </div>
     </nav>
 
@@ -47,7 +47,7 @@ export const plugins = {}
  * 添加单个插件
  * @private
  * @function
- * @param {Array|Object} plugin      - plugin = { propertiy: '元素属性名', handler: (元素, 元素属性值) => {} };&lt;br>
+ * @param {Array|Object} plugin      - plugin = { property: '元素属性名', handler: (元素, 元素属性值) => {} };&lt;br>
  *                                     handler在创建元素时抓捕到对应属性被触发, 并plugin.options = Object.assign(plugin.options, options)
  * @param {Object|Undefined} options - 插件自定义配置
  */
@@ -59,7 +59,7 @@ const addPlugin = (plugin, options) => {
     // window.console.log('see link ...')
   } else {
     // 存储插件handlerFun
-    plugins[plugin.propertiy] = plugin.handler
+    plugins[plugin.property] = plugin.handler
 
     // 修改可配置
     plugin.options &amp;&amp; options &amp;&amp; Object.assign(plugin.options, options)
@@ -71,14 +71,14 @@ const addPlugin = (plugin, options) => {
  * @function
  * @name plugins
  * @param {Array} plugins - 值 = [plugin1, ..., pluginN]; &lt;br>
- *                          plugin = { propertiy: '元素属性名', handler: (元素, 元素属性值) => {} };&lt;br>
- *                          或 plugin = [{ propertiy: '元素属性名', handler: (元素, 元素属性值) => {} }, options]; options = {...}&lt;br>
+ *                          plugin = { property: '元素属性名', handler: (元素, 元素属性值) => {} };&lt;br>
+ *                          或 plugin = [{ property: '元素属性名', handler: (元素, 元素属性值) => {} }, options]; options = {...}&lt;br>
  *                          handler在创建元素时抓捕到对应属性被触发, 并plugin.options = Object.assign(plugin.options, options)
  * @example
  * import digi, { plugins } from 'digi'
  * import refs, { allotId } from 'digi-refs'
  * console.log(refs)
- * // {propertiy: "ref", handler: ƒ, allotId: ƒ}
+ * // {property: "ref", handler: ƒ, allotId: ƒ}
  *
  * // 添加插件: plugins([refs]) 或 digi.plugins([refs])
  * plugins([refs])

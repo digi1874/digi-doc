@@ -19,7 +19,7 @@
 <div class="flex">
     <nav>
         <div class="nav-position">
-            <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#cloneDeep">cloneDeep</a></li><li><a href="global.html#createData">createData</a></li><li><a href="global.html#createElement">createElement</a></li><li><a href="global.html#createTextNode">createTextNode</a></li><li><a href="global.html#digi">digi</a></li><li><a href="global.html#forEach">forEach</a></li><li><a href="global.html#isArray">isArray</a></li><li><a href="global.html#isEmpty">isEmpty</a></li><li><a href="global.html#isFunction">isFunction</a></li><li><a href="global.html#isNull">isNull</a></li><li><a href="global.html#isNumber">isNumber</a></li><li><a href="global.html#isObject">isObject</a></li><li><a href="global.html#isString">isString</a></li><li><a href="global.html#isTofObject">isTofObject</a></li><li><a href="global.html#isUndefined">isUndefined</a></li><li><a href="global.html#pathJoin">pathJoin</a></li><li><a href="global.html#pathSplit">pathSplit</a></li><li><a href="global.html#pick">pick</a></li><li><a href="global.html#plugins">plugins</a></li><li><a href="global.html#set">set</a></li></ul>
+            <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#cloneDeep">cloneDeep</a></li><li><a href="global.html#createData">createData</a></li><li><a href="global.html#createElement">createElement</a></li><li><a href="global.html#createTextNode">createTextNode</a></li><li><a href="global.html#digi">digi</a></li><li><a href="global.html#forEach">forEach</a></li><li><a href="global.html#getFilter">getFilter</a></li><li><a href="global.html#isArray">isArray</a></li><li><a href="global.html#isEmpty">isEmpty</a></li><li><a href="global.html#isFunction">isFunction</a></li><li><a href="global.html#isNull">isNull</a></li><li><a href="global.html#isNumber">isNumber</a></li><li><a href="global.html#isObject">isObject</a></li><li><a href="global.html#isString">isString</a></li><li><a href="global.html#isTofObject">isTofObject</a></li><li><a href="global.html#isUndefined">isUndefined</a></li><li><a href="global.html#pathJoin">pathJoin</a></li><li><a href="global.html#pathSplit">pathSplit</a></li><li><a href="global.html#pick">pick</a></li><li><a href="global.html#plugins">plugins</a></li><li><a href="global.html#set">set</a></li></ul>
         </div>
     </nav>
 
@@ -47,7 +47,7 @@ import { createTemplates } from './template'
  * @param {Object|Array}  state     - 存储最新数据
  * @param {String}        watchPath - 所有父属性名连接
  */
-const setProperty = (newData, key, data, state = {}, watchPath) => {
+const setProperty = (newData, key, data, state, watchPath) => {
   watchPath = pathJoin(watchPath, key)
   addWatch(watchPath)
 
@@ -151,7 +151,7 @@ export const createData = (data, { watch } = {}) => {
   forEach(data, (value, key) => setProperty(newData, key, data, {}, id))
 
   // 添加监听
-  forEach(watch, (handler, path) => addWatch(pathJoin(id, path), handler))
+  forEach(watch, (handler, path) => addWatch(pathJoin(id, path), handler, false))
 
   // 生成渲染模板
   Object.defineProperty(newData, '$tp', {
